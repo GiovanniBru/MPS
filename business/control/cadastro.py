@@ -8,8 +8,9 @@ from business.model.database import *
 from business.control.validaCadastro import *
 
 def cadastrar():
-  Database = Database()
-
+  
+  database = Database()
+  database.appendVendedor(Vendedor("teste", 12345, "vendedor", "teste", "teste123"))
   print("Digite seu nome: ", end="")
   nome = input()
   if (not validaNome(nome)):
@@ -29,10 +30,11 @@ def cadastrar():
   print("Cadastro realizado com sucesso!")
   if(cargo=="gerente"):
     gerente = Gerente(nome, CPF, "gerente", login, senha)
-    Database.appendGerente(gerente)
+    database.appendGerente(gerente)
   elif(cargo=="gerenterh"):
     gerentederh = GerenteDeRH(nome, "gerentederh", CPF, login, senha)
-    Database.appendGerenteRH(gerentederh)
+    database.appendGerenteRH(gerentederh)
   elif(cargo=="vendedor"):
     vendedor = Vendedor(nome, CPF, "vendedor", login, senha)
-    Database.appendVendedor(vendedor)
+    print(vendedor)
+    database.appendVendedor(vendedor)
