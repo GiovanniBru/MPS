@@ -1,0 +1,2 @@
+class NomeInvalidoException(BaseException):
+	pass

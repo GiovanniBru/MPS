@@ -16,7 +16,7 @@ def mostraMenuDeCadastro():
 	print("1 - Vendedor")
 	print("2 - Gerente")
 	print("3 - Gerente de RH")
-
+	print("\nEscolha: ", end="")
 
 def mostraMenuDeListagem():
 	print("\n1 - Listar Vendedor")

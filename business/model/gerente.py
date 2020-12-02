@@ -3,4 +3,5 @@
 from business.model.funcionario import *
 
 class Gerente(Funcionario):
-	def __init__(self, requisicao, valor)
+  def __init__(self, requisicao, valor):
+    pass
