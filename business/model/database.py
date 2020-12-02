@@ -1,3 +1,9 @@
+def dump(obj):
+  for attr in dir(obj):
+    if(not attr.startswith("_")):
+        print("%r \t" % ( getattr(obj, attr)),end="")
+  print("")
+
 
 class DatabaseMeta(type):
     _instances = {}
@@ -22,7 +28,7 @@ class Database(metaclass=DatabaseMeta):
   def showDatabase(self):
     for i in self.database:
       for j in i:
-        print(j)
+        dump(j)
 
 
 
