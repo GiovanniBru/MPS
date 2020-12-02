@@ -4,6 +4,8 @@ from business.model.vendedor import *
 from view.interface import *
 from business.control.cadastro import cadastrar
 from business.control.exibirListagem import exibir
+from business.control.removerUsuario import removerUsuario
+
 
 import os
 
@@ -32,7 +34,12 @@ while(True):
     os.system('clear')
   elif(vontade == 5):
     mostraMenuDeRemocao()
-    exibir()
+    if(removerUsuario()):
+      print("Usuário removido com sucesso")
+    else:
+      print("Usuário não encontrado")
+    input("Digite qualquer caracter para voltar ao menu:")
+
     os.system('clear')
   elif(vontade == 6):
     print("Obrigado por utilizar nossa aplicação")

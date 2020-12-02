@@ -19,23 +19,27 @@ def mostraMenuDeCadastro():
 	print("\nEscolha: ", end="")
 
 def mostraMenuDeListagem():
-	print("\n1 - Listar Vendedor")
-	print("2 - Listar Gerente")
-	print("3 - Listar Gerente de RH")
-	print("4 - Voltar")
-	print("\nEscolha: ", end="")
+  print("============ LISTAR USUÁRIOS ============")
+  print("\n1 - Listar Vendedor")
+  print("2 - Listar Gerente")
+  print("3 - Listar Gerente de RH")
+  print("4 - Voltar")
+  print("\nEscolha: ", end="")
 
 def mostraTipoListagemVendedor():
-	print("1 - Listar por Ordem Alfabética")
-	print("2 - Listar pelo maior salário")
-	print("3 - Voltar")
-	print("\nEscolha: ", end="")
+  print("============ LISTAR VENDEDOR ============")
+  print("1 - Listar por Ordem Alfabética")
+  print("2 - Listar pelo maior salário")
+  print("3 - Voltar")
+  print("\nEscolha: ", end="")
 
 def mostraMenuDeEdicao():
   print("============ EDITAR USUÁRIO ============")
-	print("Digite o nome do usuário a ser editado: ", end="")
+  print("Digite o nome do usuário a ser editado: ", end="")
 
 def mostraMenuDeRemocao():
-  print("============ RE")
-	print("Digite o nome do usuário a ser removido: ", end="")
+  print("============ REMOVER USUÁRIO ============")
+  print("Digite o login do usuário a ser removido: ", end="")
+  
+
 

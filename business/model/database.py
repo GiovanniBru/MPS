@@ -35,19 +35,23 @@ class Database(metaclass=DatabaseMeta):
         listing.append(dump(j))
     return listing
 
-  def __getReferenceTo(self,key):
+  def getReferenceTo(self,key):
     userData={}
-    toexclude=0
-    for cargo in database:
-      for entry in cargo:
-        for attr in dir(entry):
-          #attr = _Funcionario.__login
-          if(attr.Contains("__login") and getattr(entry, attr)==key ):
-            return cargo,entry
+    for i,role in enumerate(self.database):
+      print(role)
+      if(role!=[]):
+        for entry in role:
+          print(i,entry)
+          for attr in dir(entry):
+            #attr = _Funcionario.__login
+            
+            if((attr=="_Funcionario__login") ):
+              print(getattr(entry, attr),key,sep="\t")
+              if(getattr(entry, attr)==key):
+                print(i,entry)
+                return i,entry
+    return [0,0]
 
-  def removeUser(self,key):
-    exclude=self.__getReferenceTo(key)
-    database.remove(exclude)
     
     
 

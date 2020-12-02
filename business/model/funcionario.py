@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class Funcionario:
-  def __init__(self, nome, CPF, cargo, salario, login, senha):
+  def __init__(self, nome, CPF, cargo, login, senha, salario):
     self.__nome = nome
     self.__CPF = CPF
     self.__cargo = cargo
