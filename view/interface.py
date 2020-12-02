@@ -32,8 +32,10 @@ def mostraTipoListagemVendedor():
 	print("\nEscolha: ", end="")
 
 def mostraMenuDeEdicao():
+  print("============ EDITAR USUÁRIO ============")
 	print("Digite o nome do usuário a ser editado: ", end="")
 
 def mostraMenuDeRemocao():
+  print("============ RE")
 	print("Digite o nome do usuário a ser removido: ", end="")
 

@@ -1,8 +1,11 @@
+
 def dump(obj):
+  userData={}
   for attr in dir(obj):
-    if(not attr.startswith("_")):
-        print("%r \t" % ( getattr(obj, attr)),end="")
-  print("")
+    #attr = _Funcionario.__login
+    if(attr.startswith("_") and not attr.endswith("__")):
+      userData[attr]=getattr(obj, attr)
+  return userData
 
 
 class DatabaseMeta(type):
@@ -26,9 +29,27 @@ class Database(metaclass=DatabaseMeta):
     self.database[2].append(x)
   
   def showDatabase(self):
+    listing=[]
     for i in self.database:
       for j in i:
-        dump(j)
+        listing.append(dump(j))
+    return listing
+
+  def __getReferenceTo(self,key):
+    userData={}
+    toexclude=0
+    for cargo in database:
+      for entry in cargo:
+        for attr in dir(entry):
+          #attr = _Funcionario.__login
+          if(attr.Contains("__login") and getattr(entry, attr)==key ):
+            return cargo,entry
+
+  def removeUser(self,key):
+    exclude=self.__getReferenceTo(key)
+    database.remove(exclude)
+    
+    
 
 
 

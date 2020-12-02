@@ -10,7 +10,7 @@ from business.control.validaCadastro import *
 def cadastrar():
   
   database = Database()
-  database.appendVendedor(Vendedor("teste", 12345, "vendedor", "teste", "teste123"))
+  database.appendVendedor(Vendedor("Nome1", 12345, "vendedor", "login", "senha123"))
   print("Digite seu nome: ", end="")
   nome = input()
   if (not validaNome(nome)):
