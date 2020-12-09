@@ -6,19 +6,22 @@ from business.model.gerentedeRH import *
 from business.model.gerente import *
 from business.model.database import *
 from business.control.validaCadastro import *
+from infra.HandleDatabase import *
 
-def cadastrar():
-  
+def cadastrar(vontade):
+  if(vontade==1):
+    cargo="vendedor"
+  elif(vontade==2):
+    cargo="gerente"
+  elif(vontade==3):
+    cargo="gerentederh"
   database = Database()
-  database.appendVendedor(Vendedor("Nome1", 12345, "vendedor", "login", "senha123"))
   print("Digite seu nome: ", end="")
   nome = input()
-  if (not validaNome(nome)):
-    print("Cadastro cancelado", end="")
+  if (not validaNome(nome)==1):
+    print("####Cadastro cancelado####")
+    input("Pressioner enter para sair")
     return -1
-
-  print("Digite seu cargo: ", end="")
-  cargo = input()
   print("Digite seu CPF: ", end="")
   CPF = input()
   print("Digite um login para sua conta: ", end="")
@@ -31,10 +34,11 @@ def cadastrar():
   if(cargo=="gerente"):
     gerente = Gerente(nome, CPF, "gerente", login, senha)
     database.appendGerente(gerente)
-  elif(cargo=="gerenterh"):
-    gerentederh = GerenteDeRH(nome, "gerentederh", CPF, login, senha)
+  elif(cargo=="gerentederh"):
+    gerentederh = GerenteDeRH(nome,CPF, "gerentederh", login, senha)
     database.appendGerenteRH(gerentederh)
   elif(cargo=="vendedor"):
     vendedor = Vendedor(nome, CPF, "vendedor", login, senha)
     print(vendedor)
     database.appendVendedor(vendedor)
+  saveDatabase(database.database)

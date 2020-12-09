@@ -1,3 +1,4 @@
+from infra.HandleDatabase import *
 
 def dump(obj):
   userData={}
@@ -18,7 +19,10 @@ class DatabaseMeta(type):
 
 class Database(metaclass=DatabaseMeta):
   def __init__(self):
-    self.database=[[],[],[]]
+    try:
+      self.database=loadDatabase()
+    except:
+      self.database=[[],[],[]]
   def appendVendedor(self,x):
     self.database[0].append(x)
 

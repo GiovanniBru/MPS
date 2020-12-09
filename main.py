@@ -17,17 +17,23 @@ while(True):
   vontade = int(input())
 
   if(vontade == 1):
+    os.system('clear')
     mostraMenuDeCadastro()
     vontade = int(input())
-    if(vontade == 1):
-      cadastrar()
+    vontade = vontade
+    cadastrar(vontade)
     os.system('clear')
   elif(vontade == 2):
     os.system('clear')
     pass
   elif(vontade == 3):
-    exibir()
     mostraMenuDeListagem()
+    vontade=int(input())
+    if(vontade == 5):
+      os.system('clear')
+      continue
+    os.system('clear')
+    exibir(vontade)
     os.system('clear')
   elif(vontade == 4):
     mostraMenuDeEdicao()

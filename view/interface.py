@@ -23,7 +23,8 @@ def mostraMenuDeListagem():
   print("\n1 - Listar Vendedor")
   print("2 - Listar Gerente")
   print("3 - Listar Gerente de RH")
-  print("4 - Voltar")
+  print("4 - Todos")
+  print("5 - Voltar")
   print("\nEscolha: ", end="")
 
 def mostraTipoListagemVendedor():

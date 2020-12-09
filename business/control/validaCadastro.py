@@ -1,5 +1,6 @@
 from infra.LoginException import *
 from infra.SenhaException import *
+from infra.NomeException import *
 
 def validaLogin(login):
   try:
@@ -24,12 +25,13 @@ def validaLogin(login):
   return 1
 
 def validaSenha(senha):
+  numeros=0
   try:	
     if(len(senha) > 12):
       raise SenhaGrandeException()
     elif(len(senha) < 8):
       raise SenhaPequenaException()
-    elif(not(senha.isdigit())):
+    elif(senha.isdigit()):
       raise SenhaSemLetraException()
     else:
       for char in senha:
@@ -61,7 +63,7 @@ def validaNome(nome):
     if(not nome.isalpha()):
       raise NomeInvalidoException()
 
-  except (NomeInvalido):
+  except (NomeInvalidoException):
     print("Seu nome não deve conter números")
     return -21
   return 1
