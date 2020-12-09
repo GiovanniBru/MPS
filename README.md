@@ -3,7 +3,7 @@ Repositório para o projeto final da disciplina Métodos de Projetos de Software
 
 Grupo: 
 - Giovanni Bruno Travassos de Carvalho 
-- Klismann
+- Klismann de Oliveira Barros
 - Nicoli 
 - Matthew
 - Lucas Sprakel 
