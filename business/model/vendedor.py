@@ -3,8 +3,8 @@
 from business.model.funcionario import *
 
 class Vendedor(Funcionario):
-	def __init__(self, nome, cpf, cargo, login, senha,salario=2000):
-		super().__init__(nome, cpf, cargo, login, senha,salario)
+	def __init__(self, nome, cpf, cargo, login, senha, data_nascimento,salario=2000):
+		super().__init__(nome, cpf, cargo, login, senha,salario, data_nascimento)
 
 	def getDados(self):
 		print("Nome: " + self.getNome() + 
@@ -12,4 +12,5 @@ class Vendedor(Funcionario):
 			"\nCargo: "	+ self.getCargo() + 
 			"\nSalario: " + str(self.getSalario()) +
       "\nLogin: " + self.getLogin() + 
-      "\nSenha: " + self.getSenha())
+      "\nSenha: " + self.getSenha() +
+      "\nData de Nascimento: " + self.getDataNascimento)

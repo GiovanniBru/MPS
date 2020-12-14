@@ -23,6 +23,10 @@ class Database(metaclass=DatabaseMeta):
       self.database=loadDatabase()
     except:
       self.database=[[],[],[]]
+    try:
+      self.notify=loadNotify()
+    except:
+      self.notify=[]
   def appendVendedor(self,x):
     self.database[0].append(x)
 

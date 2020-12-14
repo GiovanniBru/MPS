@@ -8,3 +8,7 @@ Grupo:
 - Matthew
 - Lucas Sprakel 
 - Flávio Eduardo Souto Maior Serrano
+
+Padroes de projeto:
+
+Singleton: business.model.database

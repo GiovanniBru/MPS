@@ -24,6 +24,15 @@ def cadastrar(vontade):
     return -1
   print("Digite seu CPF: ", end="")
   CPF = input()
+  print("Digite sua data de nascimento no formato DD/MM/AAAA: ", end="")
+  d_nascimento = input()
+  while((validaData(d_nascimento)==-31)):
+      print("Digite sua data de nascimento no formato DD/MM/AAAA: ", end="")
+      d_nascimento = input()
+  d_nascimento=validaData(d_nascimento)
+    
+    
+  
   print("Digite um login para sua conta: ", end="")
   login = input()
   validaLogin(login)
@@ -32,13 +41,13 @@ def cadastrar(vontade):
   validaSenha(senha)
   print("Cadastro realizado com sucesso!")
   if(cargo=="gerente"):
-    gerente = Gerente(nome, CPF, "gerente", login, senha)
+    gerente = Gerente(nome, CPF, "gerente", login, senha,d_nascimento)
     database.appendGerente(gerente)
   elif(cargo=="gerentederh"):
-    gerentederh = GerenteDeRH(nome,CPF, "gerentederh", login, senha)
+    gerentederh = GerenteDeRH(nome,CPF, "gerentederh", login, senha,d_nascimento)
     database.appendGerenteRH(gerentederh)
   elif(cargo=="vendedor"):
-    vendedor = Vendedor(nome, CPF, "vendedor", login, senha)
+    vendedor = Vendedor(nome, CPF, "vendedor", login, senha,d_nascimento)
     print(vendedor)
     database.appendVendedor(vendedor)
   saveDatabase(database.database)

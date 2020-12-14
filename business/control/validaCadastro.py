@@ -1,6 +1,7 @@
 from infra.LoginException import *
 from infra.SenhaException import *
 from infra.NomeException import *
+import  datetime
 
 def validaLogin(login):
   try:
@@ -67,3 +68,10 @@ def validaNome(nome):
     print("Seu nome não deve conter números")
     return -21
   return 1
+
+def validaData(date_text):
+    try:
+      return datetime.datetime.strptime(date_text, '%d/%m/%Y').date()
+    except ValueError:
+        print("Formato de dados errado o correto é DD-MM-AAAA")
+        return -31
