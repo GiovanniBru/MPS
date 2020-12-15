@@ -11,9 +11,9 @@ Grupo:
 
 Padroes de projeto:
 
-Singleton: business.model.database
-Factory:business.control.requisitor
-Adapter:business.control.pagamentos
-Template:business.control.gerarRelatorio
-Proxy:business.model.database
-Memento:business.control.databseRollBack
+- Singleton: business.model.database
+- Factory:business.control.requisitor
+- Adapter:business.control.pagamentos
+- Template:business.control.gerarRelatorio
+- Proxy:business.model.database
+- Memento:business.control.databseRollBack
