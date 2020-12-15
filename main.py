@@ -2,6 +2,7 @@
 
 from business.model.vendedor import *
 from view.interface import *
+from view.login_password import *
 from business.control.cadastro import cadastrar
 from business.control.exibirListagem import exibir
 from business.control.removerUsuario import removerUsuario
@@ -20,12 +21,11 @@ while(True):
     os.system('clear')
     mostraMenuDeCadastro()
     vontade = int(input())
-    vontade = vontade
     cadastrar(vontade)
     os.system('clear')
   elif(vontade == 2):
     os.system('clear')
-    pass
+    mostraLoginESenha()
   elif(vontade == 3):
     mostraMenuDeListagem()
     vontade=int(input())
@@ -37,7 +37,6 @@ while(True):
     os.system('clear')
   elif(vontade == 4):
     mostraMenuDeEdicao()
-    os.system('clear')
   elif(vontade == 5):
     mostraMenuDeRemocao()
     if(removerUsuario()):

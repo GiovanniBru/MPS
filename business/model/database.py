@@ -27,9 +27,10 @@ class Database(metaclass=DatabaseMeta):
       self.notify=loadNotify()
     except:
       self.notify=[]
-      
     self.logado=None
 
+  def setDatabase(self,Ndatabase):
+    self.database=Ndatabase
 
   def appendVendedor(self,x):
     self.database[0].append(x)

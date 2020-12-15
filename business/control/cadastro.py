@@ -6,6 +6,7 @@ from business.model.gerentedeRH import *
 from business.model.gerente import *
 from business.model.database import *
 from business.control.validaCadastro import *
+from business.control.databaseRollBack import *
 from infra.HandleDatabase import *
 
 def cadastrar(vontade):
@@ -30,9 +31,7 @@ def cadastrar(vontade):
       print("Digite sua data de nascimento no formato DD/MM/AAAA: ", end="")
       d_nascimento = input()
   d_nascimento=validaData(d_nascimento)
-    
-    
-  
+
   print("Digite um login para sua conta: ", end="")
   login = input()
   validaLogin(login)
@@ -40,6 +39,8 @@ def cadastrar(vontade):
   senha = input()
   validaSenha(senha)
   print("Cadastro realizado com sucesso!")
+  rollback=DatabaseRollBack()
+  rollback.saveChanges()
   if(cargo=="gerente"):
     gerente = Gerente(nome, CPF, "gerente", login, senha,d_nascimento)
     database.appendGerente(gerente)

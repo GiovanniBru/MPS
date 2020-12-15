@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+
+
 def mostraMenu():
 	print("============= PAPERFLY =============")
 	print("1 - Cadastrar Usuário")
@@ -41,6 +43,3 @@ def mostraMenuDeEdicao():
 def mostraMenuDeRemocao():
   print("============ REMOVER USUÁRIO ============")
   print("Digite o login do usuário a ser removido: ", end="")
-  
-
-
