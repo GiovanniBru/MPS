@@ -12,3 +12,6 @@ Grupo:
 Padroes de projeto:
 
 Singleton: business.model.database
+Factory:business.control.requisitor
+Adapter:business.control.pagamentos
+Template:business.control.gerarRelatorio

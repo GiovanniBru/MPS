@@ -27,6 +27,10 @@ class Database(metaclass=DatabaseMeta):
       self.notify=loadNotify()
     except:
       self.notify=[]
+      
+    self.logado=None
+
+
   def appendVendedor(self,x):
     self.database[0].append(x)
 
@@ -35,6 +39,9 @@ class Database(metaclass=DatabaseMeta):
 
   def appendGerenteRH(self,x):
     self.database[2].append(x)
+  
+  def appendNotificacao(self,x):
+    self.notify.append(x)
   
   def showDatabase(self):
     listing=[]
